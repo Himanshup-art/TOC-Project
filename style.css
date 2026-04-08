@@ -1,0 +1,250 @@
+:root {
+  --bg: #f4efe7;
+  --card: rgba(255, 252, 247, 0.9);
+  --panel: #fffaf3;
+  --ink: #1d2433;
+  --muted: #6c6f7a;
+  --accent: #0f766e;
+  --accent-soft: #d7f3ed;
+  --warn: #b45309;
+  --danger: #b42318;
+  --success: #157347;
+  --border: rgba(29, 36, 51, 0.12);
+  --shadow: 0 18px 50px rgba(29, 36, 51, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.16), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(180, 83, 9, 0.14), transparent 28%),
+    linear-gradient(135deg, #f7f1e8 0%, #efe7db 100%);
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 32px auto;
+  display: grid;
+  gap: 24px;
+}
+
+.hero-card,
+.theory-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.hero-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  overflow: hidden;
+}
+
+.hero-copy {
+  padding: 48px;
+  background:
+    linear-gradient(155deg, rgba(15, 118, 110, 0.1), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, rgba(255, 250, 243, 0.95), rgba(255, 246, 236, 0.92));
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 4vw, 4.4rem);
+  margin-bottom: 18px;
+}
+
+.intro {
+  max-width: 54ch;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: #364052;
+}
+
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.highlights span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  background: rgba(215, 243, 237, 0.68);
+  font-size: 0.95rem;
+}
+
+.security-form {
+  padding: 34px;
+  background: var(--panel);
+}
+
+.form-header {
+  margin-bottom: 18px;
+}
+
+.form-header p,
+.theory-card p,
+.hint,
+.message {
+  color: var(--muted);
+}
+
+.field-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #cfd5df;
+  background: #fff;
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.15);
+  transform: translateY(-1px);
+}
+
+.hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.88rem;
+}
+
+.message {
+  min-height: 1.35rem;
+  margin: 6px 0 0;
+  font-size: 0.92rem;
+}
+
+.valid {
+  border-color: rgba(21, 115, 71, 0.7);
+  box-shadow: 0 0 0 3px rgba(21, 115, 71, 0.12);
+}
+
+.invalid {
+  border-color: rgba(180, 35, 24, 0.7);
+  box-shadow: 0 0 0 3px rgba(180, 35, 24, 0.12);
+}
+
+.message.success {
+  color: var(--success);
+}
+
+.message.error {
+  color: var(--danger);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #0f766e, #115e59);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(15, 118, 110, 0.22);
+}
+
+.result-banner {
+  min-height: 52px;
+  margin-top: 16px;
+  border-radius: 16px;
+  padding: 14px 16px;
+  display: none;
+  align-items: center;
+  font-weight: 700;
+}
+
+.result-banner.show {
+  display: flex;
+}
+
+.result-banner.success {
+  background: rgba(21, 115, 71, 0.12);
+  color: var(--success);
+}
+
+.result-banner.error {
+  background: rgba(180, 35, 24, 0.12);
+  color: var(--danger);
+}
+
+.theory-card {
+  padding: 32px;
+}
+
+.theory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.theory-grid article {
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .hero-card {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy,
+  .security-form,
+  .theory-card {
+    padding: 24px;
+  }
+
+  .theory-grid {
+    grid-template-columns: 1fr;
+  }
+}
