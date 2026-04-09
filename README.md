@@ -1,44 +1,56 @@
-# College Login & Security Module
+# MITAOE Student Login Portal
 
-This project is a Theory of Computation mini-project that demonstrates how regular expressions are used for input validation and how those rules correspond to regular languages and DFA design.
+Interactive login portal built with HTML, CSS, and JavaScript for MIT Academy of Engineering.
 
-## Project Features
+## Files
 
-- Email validation
+- `index.html` - main UI
+- `style.css` - portal styling and animations
+- `script.js` - validation logic and interactivity
+
+## Features
+
+- MITAOE email validation using `@mitaoe.ac.in`
 - Username validation
-- Password strength validation
+- Strong password validation
 - Confirm password matching
 - OTP validation
-- Real-time error messages
-- Clean UI for college project demonstration
+- Real-time error and success feedback
+- Password show/hide toggle
+- Password strength meter
+- Completion progress tracker
 
-## Technologies Used
+## Installation
 
-- HTML
-- CSS
-- JavaScript
-- TOC concepts: Regular Expressions, Regular Languages, DFA
+No package installation is required.
 
-## How to Run
+## Run Locally
 
-1. Open `index.html` in any browser.
-2. Enter values in the form fields.
-3. Observe real-time validation messages.
-4. Submit the form to check whether all fields are valid.
+### Option 1: Open directly
 
-## Validation Regex
+```powershell
+start index.html
+```
 
-- Email: `^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$`
-- Username: `^[A-Za-z]{3,15}$`
-- Password: `^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$`
-- OTP: `^\d{6}$`
+### Option 2: VS Code Live Server
 
-## Suggested TOC Theory Screenshots
+1. Open the folder in VS Code.
+2. Install the Live Server extension if needed.
+3. Right-click `index.html`.
+4. Choose `Open with Live Server`.
 
-- DFA for OTP validation in FSM Simulator
-- DFA for Username validation in FSM Simulator
-- Optional grammar explanation using CFG Tool
+## Project Structure
 
-## Viva Line
+```text
+TOC-Project/
+|-- index.html
+|-- style.css
+|-- script.js
+|-- README.md
+```
 
-`We used regular expressions for validation and mapped them to equivalent DFA to show that the accepted inputs belong to regular languages.`
+## Sample Valid Email
+
+```text
+studentprn@mitaoe.ac.in
+```

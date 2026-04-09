@@ -3,36 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>College Login & Security Module</title>
+  <title>MITAOE Student Login Portal</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="ambient ambient-three"></div>
   <main class="page-shell">
     <section class="hero-card">
       <div class="hero-copy">
-        <p class="eyebrow">Theory of Computation Project</p>
-        <h1>College Login & Security Module</h1>
+        <p class="eyebrow">Secure Campus Access</p>
+        <div class="brand-lockup">
+          <div class="brand-mark">
+            <span class="brand-mit">MIT</span>
+            <span class="brand-sub">Academy of Engineering</span>
+          </div>
+        </div>
+        <h1>MITAOE Student Login Portal</h1>
         <p class="intro">
-          This module validates user inputs using Regular Expressions and connects each validation
-          rule to Regular Languages and DFA concepts from TOC.
+          A secure login experience designed for MIT Academy of Engineering with instant validation,
+          domain-specific email checks, and a smooth campus access flow.
         </p>
         <div class="highlights">
-          <span>Regex-based validation</span>
-          <span>DFA theory mapping</span>
-          <span>Realtime feedback</span>
+          <span>Realtime validation</span>
+          <span>Password strength checks</span>
+          <span>Fast OTP verification</span>
+        </div>
+
+        <div class="insight-panel">
+          <div class="insight-head">
+            <h2>Access Readiness</h2>
+            <span id="progressText">0% complete</span>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+          <div class="status-grid">
+            <article class="status-card" data-status-card="email">
+              <span class="status-label">Email</span>
+              <strong id="emailStatus">Waiting</strong>
+            </article>
+            <article class="status-card" data-status-card="username">
+              <span class="status-label">Username</span>
+              <strong id="usernameStatus">Waiting</strong>
+            </article>
+            <article class="status-card" data-status-card="password">
+              <span class="status-label">Password</span>
+              <strong id="passwordStatus">Waiting</strong>
+            </article>
+            <article class="status-card" data-status-card="otp">
+              <span class="status-label">OTP</span>
+              <strong id="otpStatus">Waiting</strong>
+            </article>
+          </div>
         </div>
       </div>
 
       <form id="securityForm" class="security-form" novalidate>
         <div class="form-header">
-          <h2>Student Access Portal</h2>
-          <p>Fill all fields correctly to unlock secure college login.</p>
+          <h2>MITAOE Student Access</h2>
+          <p>Use your MITAOE email and complete all fields to unlock your dashboard.</p>
         </div>
 
         <div class="field-group">
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="student@college.edu" autocomplete="off">
-          <small class="hint">Format: letters/numbers + @ + domain + extension</small>
+          <input id="email" name="email" type="email" placeholder="studentprn@mitaoe.ac.in" autocomplete="off">
+          <small class="hint">Only official MITAOE email IDs are allowed</small>
           <p class="message" id="emailMessage"></p>
         </div>
 
@@ -45,14 +82,24 @@
 
         <div class="field-group">
           <label for="password">Password</label>
-          <input id="password" name="password" type="password" placeholder="Strong password" autocomplete="new-password">
+          <div class="input-shell">
+            <input id="password" name="password" type="password" placeholder="Strong password" autocomplete="new-password">
+            <button type="button" class="toggle-btn" data-toggle-target="password">Show</button>
+          </div>
           <small class="hint">At least 8 chars with upper, lower, digit and special symbol</small>
+          <div class="strength-meter" aria-hidden="true">
+            <div id="passwordStrengthFill" class="strength-fill"></div>
+          </div>
+          <p id="passwordStrengthText" class="strength-text">Password strength: waiting for input</p>
           <p class="message" id="passwordMessage"></p>
         </div>
 
         <div class="field-group">
           <label for="confirmPassword">Confirm Password</label>
-          <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Re-enter password" autocomplete="new-password">
+          <div class="input-shell">
+            <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Re-enter password" autocomplete="new-password">
+            <button type="button" class="toggle-btn" data-toggle-target="confirmPassword">Show</button>
+          </div>
           <small class="hint">Must exactly match the password</small>
           <p class="message" id="confirmPasswordMessage"></p>
         </div>
@@ -67,33 +114,6 @@
         <button type="submit" class="submit-btn">Validate & Login</button>
         <div id="resultBanner" class="result-banner" aria-live="polite"></div>
       </form>
-    </section>
-
-    <section class="theory-card">
-      <h2>TOC Theory Mapping</h2>
-      <div class="theory-grid">
-        <article>
-          <h3>Regular Expressions</h3>
-          <p>
-            Every input field is validated using a regex pattern, which defines a regular language.
-            Only strings belonging to that language are accepted.
-          </p>
-        </article>
-        <article>
-          <h3>DFA Connection</h3>
-          <p>
-            Equivalent DFA can be constructed for each field by reading characters one by one and
-            moving through valid or reject states based on the pattern rules.
-          </p>
-        </article>
-        <article>
-          <h3>Practical Security</h3>
-          <p>
-            The module demonstrates how TOC concepts are used in real systems like authentication,
-            access control, login portals, and secure verification workflows.
-          </p>
-        </article>
-      </div>
     </section>
   </main>
 
